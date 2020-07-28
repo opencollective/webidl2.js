@@ -22,12 +22,15 @@ typedef (boolean or RecursiveBooleanDict? or Dict)
 (no-nullable-union-dict) Validation error at line 20 in nullable-union-dictionary.webidl:
  voidOp((boolean or Dict)? arg)
                     ^ Nullable union cannot include a dictionary type
-(no-nullable-dict-arg) Validation error at line 20 in nullable-union-dictionary.webidl, inside `argument arg`:
+(no-nullable-dict-arg) Validation error at line 20 in nullable-union-dictionary.webidl, inside `interface Interface -> operation voidOp -> argument arg`:
 boolean or Dict)? arg);
                   ^ Dictionary arguments cannot be nullable.
 (no-nullable-union-dict) Validation error at line 21 in nullable-union-dictionary.webidl:
   attribute (boolean or Dict)? attr;
                         ^ Nullable union cannot include a dictionary type
-(no-nullable-union-dict) Validation error at line 25 in nullable-union-dictionary.webidl:
+(no-nullable-union-dict) Validation error at line 23 in nullable-union-dictionary.webidl:
+  iterable<(boolean or Dict)?>;
+                       ^ Nullable union cannot include a dictionary type
+(no-nullable-union-dict) Validation error at line 27 in nullable-union-dictionary.webidl:
   (boolean or Dict)? dict;
               ^ Nullable union cannot include a dictionary type

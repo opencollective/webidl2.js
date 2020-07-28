@@ -194,6 +194,7 @@ properties:
    * `incomplete-op`: Regular or static operations must have both a return type and an identifier.
    * `no-cross-overload`: Overloading must be done within a single interface or namespace.
    * `no-constructible-global`: Interfaces with `[Global]` cannot have constructors.
+   * `renamed-legacy`: Legacy extended attributes must use their new names.
 * `input`: a short peek at the text at the point where the error happened
 * `tokens`: the five tokens at the point of error, as understood by the tokeniser
   (this is the same content as `input`, but seen from the tokeniser's point of view)
@@ -742,6 +743,7 @@ These appear as members of interfaces that look like this:
   "idlType": /* One or two types */ ,
   "readonly": false, // only for maplike and setlike
   "async": false, // iterable can be async
+  "arguments": [], // only for async iterable
   "extAttrs": [],
   "parent": { ... }
 }
@@ -753,6 +755,7 @@ The fields are as follows:
 * `idlType`: An array with one or more [IDL Types](#idl-type) representing the declared type arguments.
 * `readonly`: `true` if the maplike or setlike is declared as read only.
 * `async`: `true` if the type is async iterable.
+* `arguments`: An array of arguments if exists, empty otherwise. Currently only `async iterable` supports the syntax.
 * `extAttrs`: An array of [extended attributes](#extended-attributes).
 * `parent`: The container of this type as an Object.
 
